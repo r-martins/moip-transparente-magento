@@ -1,0 +1,29 @@
+# MOIP Transparente + Onestepcheckout (fork r-martins)
+# Directory links for isolation via modman deploy/undeploy
+
+app/code/local/MOIP app/code/local/MOIP
+app/etc/modules/MOIP_All.xml app/etc/modules/MOIP_All.xml
+app/etc/modules/MOIP_Onestepcheckout.xml app/etc/modules/MOIP_Onestepcheckout.xml
+app/etc/modules/MOIP_Transparente.xml app/etc/modules/MOIP_Transparente.xml
+js/MOIP js/MOIP
+app/design/adminhtml/base/default/layout/moip_onestepcheckout.xml app/design/adminhtml/base/default/layout/moip_onestepcheckout.xml
+app/design/adminhtml/base/default/layout/moip_transparente.xml app/design/adminhtml/base/default/layout/moip_transparente.xml
+app/design/adminhtml/base/default/template/MOIP app/design/adminhtml/base/default/template/MOIP
+app/design/adminhtml/default/default/layout/moip_onestepcheckout.xml app/design/adminhtml/default/default/layout/moip_onestepcheckout.xml
+app/design/adminhtml/default/default/layout/moip_transparente.xml app/design/adminhtml/default/default/layout/moip_transparente.xml
+app/design/adminhtml/default/default/template/MOIP app/design/adminhtml/default/default/template/MOIP
+app/design/frontend/base/default/layout/moip_onestepcheckout.xml app/design/frontend/base/default/layout/moip_onestepcheckout.xml
+app/design/frontend/base/default/layout/moip_recurring_profile.xml app/design/frontend/base/default/layout/moip_recurring_profile.xml
+app/design/frontend/base/default/layout/moip_transparente.xml app/design/frontend/base/default/layout/moip_transparente.xml
+app/design/frontend/base/default/template/MOIP app/design/frontend/base/default/template/MOIP
+app/locale/en_US/MOIP_Onestepcheckout.csv app/locale/en_US/MOIP_Onestepcheckout.csv
+app/locale/en_US/MOIP_Transparente.csv app/locale/en_US/MOIP_Transparente.csv
+app/locale/en_US/template/email/sales/moip/cancel.html app/locale/en_US/template/email/sales/moip/cancel.html
+app/locale/en_US/template/email/sales/moip/pending.html app/locale/en_US/template/email/sales/moip/pending.html
+app/locale/pt_BR/MOIP_Onestepcheckout.csv app/locale/pt_BR/MOIP_Onestepcheckout.csv
+app/locale/pt_BR/MOIP_Transparente.csv app/locale/pt_BR/MOIP_Transparente.csv
+app/locale/pt_BR/template/email/sales/moip/cancel.html app/locale/pt_BR/template/email/sales/moip/cancel.html
+app/locale/pt_BR/template/email/sales/moip/pending.html app/locale/pt_BR/template/email/sales/moip/pending.html
+skin/adminhtml/base/default/MOIP skin/adminhtml/base/default/MOIP
+skin/adminhtml/default/default/MOIP skin/adminhtml/default/default/MOIP
+skin/frontend/base/default/MOIP skin/frontend/base/default/MOIP

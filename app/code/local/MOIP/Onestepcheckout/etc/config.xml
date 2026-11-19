@@ -92,19 +92,11 @@
         </translate>
     </adminhtml>
     <global>
-        <rewrite>
-            <moip_onestepcheckout_index>
-                <from><![CDATA[#^/checkout/onepage/#]]></from>
-                <to>/onestepcheckout/index/</to>
-            </moip_onestepcheckout_index>
-
-           
-            <moip_onestepcheckout_order>
-                <from><![CDATA[#^/sales/order/reorder/#]]></from>
-                <to>/onestepcheckout/order/reorder/</to>
-            </moip_onestepcheckout_order>
-        
-        </rewrite>
+        <!--
+            PB Integrações fork: removed unconditional Magento URL rewrites that hijacked
+            /checkout/onepage and /sales/order/reorder on ALL websites. Redirect is now
+            conditional via observer when onestepcheckout/config/enabled is true (website/store scope).
+        -->
         <models>
             <onestepcheckout>
                 <class>MOIP_Onestepcheckout_Model</class>
@@ -155,6 +147,24 @@
                     </onstepcheckout>
                 </observers>
             </checkout_cart_add_product_complete>
+            <controller_action_predispatch_checkout_onepage_index>
+                <observers>
+                    <moip_onestepcheckout_redirect_onepage>
+                        <type>singleton</type>
+                        <class>onestepcheckout/observer</class>
+                        <method>redirectToMoipCheckoutIfEnabled</method>
+                    </moip_onestepcheckout_redirect_onepage>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_index>
+            <controller_action_predispatch_sales_order_reorder>
+                <observers>
+                    <moip_onestepcheckout_redirect_reorder>
+                        <type>singleton</type>
+                        <class>onestepcheckout/observer</class>
+                        <method>redirectReorderToMoipCheckoutIfEnabled</method>
+                    </moip_onestepcheckout_redirect_reorder>
+                </observers>
+            </controller_action_predispatch_sales_order_reorder>
         </events>
         <fieldsets>
             <sales_convert_quote_address>
@@ -225,7 +235,7 @@
     <default>
         <onestepcheckout>
             <config>
-                <enabled>1</enabled>
+                <enabled>0</enabled>
                 <default_paymentmethod></default_paymentmethod>
                 <allowshippingotheraddress>1</allowshippingotheraddress>
                 <allowguestcheckout>1</allowguestcheckout>
