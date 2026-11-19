@@ -23,11 +23,13 @@ class MOIP_Transparente_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales_M
         }
 
 
-        $amount = 'fee_moip';
+        // Upstream bug: used the code string 'fee_moip' as amount (PHP 8 TypeError on int+string).
+        $amount = (float) $address->getFeeMoip();
+        $baseAmount = (float) $address->getBaseFeeMoip();
 
         if ($amount) {
             $this->_addAmount($amount);
-            $this->_addBaseAmount($amount);
+            $this->_addBaseAmount($baseAmount ?: $amount);
         }
 
         return $this;
