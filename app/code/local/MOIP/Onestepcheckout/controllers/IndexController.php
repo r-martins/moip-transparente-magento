@@ -617,9 +617,18 @@ class MOIP_Onestepcheckout_IndexController extends Mage_Checkout_OnepageControll
                 if ($addressErrors !== true) {
                     $errors = array_merge($errors, $addressErrors);
                 }
+
+                // Edit-address form did not collect CPF, but validate() requires customer taxvat.
+                $taxvat = trim((string) $this->getRequest()->getPost('taxvat'));
+                if ($taxvat !== '') {
+                    $customer->setTaxvat($taxvat);
+                }
                 
                 $update = $this->getRequest()->getPost('_form_type');
                 if (count($errors) === 0) {
+                    if ($taxvat !== '') {
+                        $customer->save();
+                    }
                     $address->save();
                     try {
                         if ($update == "billing") {

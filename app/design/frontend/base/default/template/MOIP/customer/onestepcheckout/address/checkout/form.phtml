@@ -47,6 +47,17 @@
     </div>
 
     <div class="row">
+      <div class="col-sm-6">
+            <div class="form-group">
+                <label class="col-sm-12 control-label" for="taxvat">CPF</label>
+                <div class="col-sm-12">
+                    <input type="tel" name="taxvat" id="taxvat" value="<?php echo $this->htmlEscape(Mage::getSingleton('customer/session')->getCustomer()->getTaxvat()) ?>" title="CPF" class="form-control required-entry input-moip validate-cpf" placeholder="CPF" autocomplete="off">
+                </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-sm-12">
         <hr>
       </div>  
